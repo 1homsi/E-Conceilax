@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { addToCart, removeFromCart } from '../actions/cartActions';
-import MessageBox from '../components/MessageBox';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { addToCart, removeFromCart } from "../actions/cartActions";
+import MessageBox from "../components/MessageBox";
 
 export default function CartScreen(props) {
   const productId = props.match.params.id;
   const qty = props.location.search
-    ? Number(props.location.search.split('=')[1])
+    ? Number(props.location.search.split("=")[1])
     : 1;
   const cart = useSelector((state) => state.cart);
   const { cartItems, error } = cart;
@@ -23,7 +23,7 @@ export default function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    props.history.push('/signin?redirect=shipping');
+    props.history.push("/signin?redirect=shipping");
   };
   return (
     <div className="row top">
@@ -90,14 +90,21 @@ export default function CartScreen(props) {
               </h2>
             </li>
             <li>
-              <button
-                type="button"
-                onClick={checkoutHandler}
-                className="primary block"
-                disabled={cartItems.length === 0}
-              >
-                Proceed to Checkout
-              </button>
+              {cartItems.length === 0 ? (
+                <Link to="/">
+                  <button type="button" className="primary block">
+                    Shop
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={checkoutHandler}
+                  className="primary block"
+                >
+                  Proceed to Checkout
+                </button>
+              )}
             </li>
           </ul>
         </div>

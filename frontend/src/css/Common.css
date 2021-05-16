@@ -53,7 +53,8 @@ h1 {
     border: 0.1rem #404040 solid;
   }
   button.primary {
-    background-color: #5b86e5;
+    background-color: #19547b;
+    color: white;
   }
   button.block {
     width: 100%;

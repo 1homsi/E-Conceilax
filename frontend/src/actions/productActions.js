@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Axios from 'axios';
 import {
   PRODUCT_CREATE_FAIL,

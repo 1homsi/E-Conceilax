@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../../actions/userActions";
 import { MenuItems } from "./MenuItems";
@@ -78,10 +78,10 @@ export default function Nav() {
                       <li>
                         <Link className="Optionsdown" to="/orderlist/seller">Orders</Link>
                       </li>
+                      <div class="navbar-divider"></div>
                     </>
                   )}
                 </li>
-                <div class="navbar-divider"></div>
                 <li>
                     <Link className="Optionsdown" to="/profile">Profile</Link>
                   </li>

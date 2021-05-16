@@ -14,7 +14,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <h1 style={{flex:1,justifyContent: "center",textAlign: "center", marginBottom:"1.3%",}}><strong>Featured Products</strong></h1>
+      <h1 style={{flex:1,justifyContent: "center",textAlign: "center", marginBottom:"1.3%", fontSize:"20px",}}><strong>Featured Products</strong></h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
