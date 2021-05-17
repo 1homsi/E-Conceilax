@@ -21,12 +21,6 @@ export default function SearchScreen(props) {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
-  // const productCategoryList = useSelector((state) => state.productCategoryList);
-  // const {
-  //   loading: loadingCategories,
-  //   error: errorCategories,
-  //   categories,
-  // } = productCategoryList;
   useEffect(() => {
     dispatch(
       listProducts({
@@ -52,7 +46,7 @@ export default function SearchScreen(props) {
     return `/search/category/${filterCategory}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`;
   };
   return (
-    <div>
+    <div style={{ padding:"2rem",}}>
       <div className="row">
         {loading ? (
           <LoadingBox></LoadingBox>
